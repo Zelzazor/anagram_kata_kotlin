@@ -29,14 +29,26 @@ dependencies {
     // This dependency is used by the application.
     implementation("com.google.guava:guava:30.1-jre")
 
-    // Use the Kotlin test library.
-    testImplementation("org.jetbrains.kotlin:kotlin-test")
+    implementation("junit:junit:4.13")
 
-    // Use the Kotlin JUnit integration.
-    testImplementation("org.jetbrains.kotlin:kotlin-test-junit")
+    
 }
+
+
 
 application {
     // Define the main class for the application.
     mainClass.set("anagram_kotlin.AppKt")
+}
+
+
+tasks.test {
+    useJUnit()
+
+    maxHeapSize = "1G"
+
+    testLogging {
+        events("PASSED", "SKIPPED", "FAILED")
+    }
+
 }
