@@ -7,7 +7,17 @@ import org.junit.Test
 import org.junit.Assert
 
 class AppTest {
-    @Test fun isTrue() {
-        Assert.assertTrue(true);
+    @Test fun whenStringInputIsNullThrowException() {
+        Assert.assertThrows(IllegalArgumentException::class.java){
+            var str: String? = null; 
+            var test = Anagram(str); 
+        }
+    }
+
+    @Test fun whenListInputIsNullThrowException() {
+        Assert.assertThrows(IllegalArgumentException::class.java){
+            var lst: List<String>? = null; 
+            var test = Anagram(lst); 
+        }
     }
 }
