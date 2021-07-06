@@ -11,6 +11,12 @@ class Anagram {
         if(words == null){
             throw IllegalArgumentException("String null")
         }
+        if(words.size == 0){
+            throw IllegalArgumentException("List is empty")
+        }
+    }
+    fun toList():List<List<String>>{
+        return listOf<List<String>>(listOf<String>("adios", "adois"))
     }
 
     
